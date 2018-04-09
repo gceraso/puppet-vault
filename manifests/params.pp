@@ -10,9 +10,9 @@ class vault::params {
   $manage_group       = true
   $config_dir         = '/etc/vault'
   $download_url       = undef
-  $download_url_base  = 'https://releases.hashicorp.com/vault/'
+  $download_url_base  = "https://releases.hashicorp.com/vault/${version}"
   $download_extension = 'zip'
-  $version            = '0.8.3'
+  $version            = '0.9.6'
   $service_name       = 'vault'
   $num_procs          = $facts['processorcount']
   $package_name       = 'vault'
@@ -20,7 +20,7 @@ class vault::params {
 
   $download_dir        = '/tmp'
   $manage_download_dir = false
-  $download_filename   = 'vault.zip'
+  $download_filename   = "vault_${version}_linux_${architecture}.zip"
 
   # storage and listener are mandatory, we provide some sensible
   # defaults here
